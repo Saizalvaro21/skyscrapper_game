@@ -1,7 +1,7 @@
 #include "algoritmo.h"
 
 
-void    ft_top_clues(celda **tablero, int j, int num){
+void    ft_top_clues(__uint16_t **tablero, int j, int num){
     int i;
 
     i = 0;
@@ -12,7 +12,7 @@ void    ft_top_clues(celda **tablero, int j, int num){
             delete_posibility(tablero[i][j], DIM);
         }
     }
-    else if(num == 4){
+    else if(num == DIM){
         while(i < DIM){
             set_nbr(tablero[i][j], i+1);
             i++;
@@ -26,7 +26,7 @@ void    ft_top_clues(celda **tablero, int j, int num){
     }
 }
 
-void    ft_left_clues(celda **tablero, int i, int num){
+void    ft_left_clues(__uint16_t **tablero, int i, int num){
     int j;
 
     j = 0;
@@ -51,7 +51,7 @@ void    ft_left_clues(celda **tablero, int i, int num){
     }
 }
 
-void    ft_bottom_clues(celda **tablero, int j, int num){
+void    ft_bottom_clues(__uint16_t **tablero, int j, int num){
     int i;
     
     i = DIM-1;
@@ -77,7 +77,7 @@ void    ft_bottom_clues(celda **tablero, int j, int num){
     }
 }
 
-void    ft_right_clues(celda **tablero, int i, int num){
+void    ft_right_clues(__uint16_t **tablero, int i, int num){
     int j;
 
     j = DIM-1;
@@ -88,14 +88,12 @@ void    ft_right_clues(celda **tablero, int i, int num){
             delete_posibility(tablero[i][j], DIM);
         }
     }
-
     else if(num == 4){
         while(j >= 0){
             set_nbr(tablero[i][j], j+1);
             j--;
         }
     }
-
     else{
         
         while(j > num){
