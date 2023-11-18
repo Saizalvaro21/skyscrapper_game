@@ -1,19 +1,12 @@
 #include <stdlib.h>
+#include <unistd.h>
 #define DIM 4
 
-
-/*
- * Name: 
- *      check_min_max();
- *  Function:
- *      Busca los puntos de vista 1 y DIM. De esta manera marca
- *      el edificio más alto a los de en frente del 1 y 1,2,3,..,DIM a la fila enfrente de DIM
- *  Input:
- *      -> necesitamos saber como lo estructuramos
- * Output:
- *      Retorna algo para saber si ha habido algun error.
-*/
-int check_min_max();
+typedef struct celda
+{
+    __uint8_t posib;
+    bool final = 0;
+}celda;
 
 /*
  * Name: 
@@ -23,8 +16,9 @@ int check_min_max();
  *  Input:
  *      puntero a celda, numero 
 */
-void delete_posibility();
+void delete_posibility(celda C, int nb);
 
+void set_nbr(celda C, int nb);
 /*
  * Name: 
  *      check_clues();
