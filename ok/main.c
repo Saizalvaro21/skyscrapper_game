@@ -6,7 +6,7 @@
 /*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 19:20:28 by alvaro            #+#    #+#             */
-/*   Updated: 2023/11/19 19:27:59 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 19:35:59 by alvaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
 	char    ***arr;
 	int     **clues;
 	int		dim;
-	int		i;
 
 	if (argc != 2)
 		return ((2));

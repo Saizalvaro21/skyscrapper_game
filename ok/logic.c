@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   logic.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/19 19:36:15 by alvaro            #+#    #+#             */
+/*   Updated: 2023/11/19 19:43:49 by alvaro           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "rush01.h"
+
 void	check_clues(char ***arr, int **clues, int dim)
 {
 	int i;
@@ -20,14 +34,14 @@ void	check_top(char ***arr, int col, int clue, int dim)
     i = -1;
     if(clue-1 == 1)
     {
-        set_nbr(arr[i][col], dim);
+        arr[i][col] = set_num(dim);
         while(i++ < dim-2)
-            delete_posibility(arr[i][col], dim-1);
+            delete_pos(arr[i][col], dim-1);
     }
     else if(clue == dim)
     {
         while(++i< dim-1)
-            set_nbr(arr[i][col], i+1);
+            arr[i][col] = set_num(i+1);
     }
     else
     {
@@ -35,7 +49,7 @@ void	check_top(char ***arr, int col, int clue, int dim)
         {
             i = 0;
             while(++i < clue-1)
-                delete_posibility(arr[i][col], dim);
+                delete_pos(arr[i][col], dim);
         }
     }
 }
@@ -47,14 +61,14 @@ void	check_bottom(char ***arr, int col, int clue, int dim)
     i = dim-1;
     if(clue-1 == 1)
     {
-        set_nbr(arr[i - 1][col], dim - 1);
+        arr[i - 1][col] = set_num(dim - 1);
         while(--i >= 0)
-            delete_posibility(arr[i][col], dim-1);
+            delete_pos(arr[i][col], dim-1);
     }
     else if(clue == dim)
     {
         while(--i >= 0)
-            set_nbr(arr[i][col], dim-1-i);
+            arr[i][col] = set_num(dim-1-i);
     }
     else
     {
@@ -62,7 +76,7 @@ void	check_bottom(char ***arr, int col, int clue, int dim)
         {
             i = dim;
             while(--i < dim-clue)
-                delete_posibility(arr[i][col], dim);
+                delete_pos(arr[i][col], dim);
         }
     }
 }
@@ -74,14 +88,14 @@ void	check_left(char ***arr, int row, int clue, int dim)
     i = -1;
     if(clue-1 == 1)
     {
-        set_nbr(arr[row][i], dim);
+        arr[row][i] = set_num(dim);
         while(i++ < dim-2)
-            delete_posibility(arr[row][i], dim-1);
+            delete_pos(arr[row][i], dim-1);
     }
     else if(clue == dim)
     {
         while(++i< dim-1)
-            set_nbr(arr[row][i], i+1);
+            arr[row][i] = set_num(i+1);
     }
     else
     {
@@ -89,7 +103,7 @@ void	check_left(char ***arr, int row, int clue, int dim)
         {
             i = 0;
             while(++i < clue-1)
-                delete_posibility(arr[row][i], dim);
+                delete_pos(arr[row][i], dim);
         }
     }
 }
@@ -101,14 +115,14 @@ void	check_right(char ***arr, int row, int clue, int dim)
     i = dim-1;
     if(clue-1 == 1)
     {
-        set_nbr(arr[row][i - 1], dim - 1);
+        arr[row][i - 1] = set_num(dim - 1);
         while(--i >= 0)
-            delete_posibility(arr[row][i], dim-1);
+            delete_pos(arr[row][i], dim-1);
     }
     else if(clue == dim)
     {
         while(--i >= 0)
-            set_nbr(arr[row][i], dim-1-i);
+            arr[row][i] = set_num(dim-1-i);
     }
     else
     {
@@ -116,7 +130,7 @@ void	check_right(char ***arr, int row, int clue, int dim)
         {
             i = dim;
             while(--i < dim-clue)
-                delete_posibility(arr[row][i], dim);
+                delete_pos(arr[row][i], dim);
         }
     }
 }
