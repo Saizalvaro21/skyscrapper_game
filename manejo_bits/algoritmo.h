@@ -10,11 +10,11 @@
  *  Input:
  *      puntero a __uint16_t, numero 
 */
-void delete_posibility(__uint16_t C, int nb);
+void delete_posibility(__uint16_t *C, int nb);
 
 
 
-void set_nbr(__uint16_t C, int nb);
+void set_nbr(__uint16_t *C, int nb);
 
 /*
  * Name: 
@@ -25,7 +25,7 @@ void set_nbr(__uint16_t C, int nb);
  *  Input:
  *      Tablero, lado, altura, numero
 */
-void check_clues();
+void check_clues(__uint16_t **board, char* clues);
 
 /*
  * Name: 
@@ -38,7 +38,7 @@ void check_clues();
  *      int nb -> number to remove from posibilities
  *
 */
-void checkRow();
+void checkRow(__uint16_t **board, int row, int nbr);
 
 /*
  * Name: 
