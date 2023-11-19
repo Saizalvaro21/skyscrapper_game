@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:13:04 by nucieda-          #+#    #+#             */
-/*   Updated: 2023/11/19 14:21:38 by nucieda-         ###   ########.fr       */
+/*   Updated: 2023/11/19 17:57:48 by alvaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void read_clues(char *arg, int dim, int **clues)
 	{
 		while(j < dim)
 		{
-			clues[i][j] = get clue(i, j, arg, dim);
+			clues[i][j] = get_clue(i, j, arg, dim);
 			j++;
 		}
 		i++;

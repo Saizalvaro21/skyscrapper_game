@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sudoku.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:13:28 by nucieda-          #+#    #+#             */
-/*   Updated: 2023/11/19 14:17:36 by nucieda-         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:01:33 by alvaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,32 @@ void	check_row(char	***arr, int	col, char num, int dim)
 
 void	check_col(char	***arr, int	row, char num, int dim)
 {
-	
+	int i;
+
+	i = 0;
+    while(i < dim)
+    {
+        delete_pos(arr[i][row], num);
+        i++;
+    }
+}
+
+void	check_sudoku(char ***arr, int dim)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while(i < dim)
+	{
+		j = 0;
+		while(j < 9)
+		{
+			if(arr[i][j][1] == '\0' && *arr[i][j] >= '1' && *arr[i][j] <= ('0'+dim))
+			{
+				check_col(arr, j, *arr[i][j], dim);
+				check_row(arr, i, *arr[i][j], dim);
+			}
+		}
+	}
 }

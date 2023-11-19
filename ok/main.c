@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 		return ((2));
 
-	dim = get_dim(argv[1]);
+	dim = check_args(argv[1]);
 	arr = init_arr(dim);
 	clues = init_clues(dim, argv[1]);
 }
