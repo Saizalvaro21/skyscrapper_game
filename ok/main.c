@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/19 19:20:28 by alvaro            #+#    #+#             */
+/*   Updated: 2023/11/19 19:21:42 by alvaro           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "rush01.h"
 
 int main(int argc, char *argv[])
@@ -13,6 +25,20 @@ int main(int argc, char *argv[])
 	dim = check_args(argv[1]);
 	arr = init_arr(dim);
 	clues = init_clues(dim, argv[1]);
+
+	check_clues(arr, clues, dim);
+
+	while(!solved(arr) && !impossible(arr))
+	{
+		check_sudoku(arr, dim);
+		if(check_multi_sol(arr)){
+			//
+		}
+	}
+	print_arr(arr, dim);
+	ft_free_clues(clues);
+	ft_free_arr(arr);
+	return(0);
 }
 
 int solved(char ***arr)

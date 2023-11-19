@@ -6,7 +6,7 @@
 /*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:13:28 by nucieda-          #+#    #+#             */
-/*   Updated: 2023/11/19 19:01:33 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 19:20:17 by alvaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	check_sudoku(char ***arr, int dim)
 				check_col(arr, j, *arr[i][j], dim);
 				check_row(arr, i, *arr[i][j], dim);
 			}
+			j++;
 		}
+		i++;
 	}
 }

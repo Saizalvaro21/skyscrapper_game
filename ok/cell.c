@@ -37,3 +37,22 @@ char	*set_num(char num)
 
 	return (final);
 }
+
+void	print_arr(char ***arr, int dim)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while(i < dim)
+	{
+		j = 0;
+		while(j < 9)
+		{
+			ft_putchar(*arr[i][j]);
+			i++;
+		}
+		j++;
+		ft_putchar('\n');
+	}
+}
