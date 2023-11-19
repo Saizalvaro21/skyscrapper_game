@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 19:20:28 by alvaro            #+#    #+#             */
-/*   Updated: 2023/11/19 19:35:59 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 20:05:17 by nucieda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ int main(int argc, char *argv[])
 	ft_free_clues(clues);
 	ft_free_arr(arr);
 	return(0);
+}
+
+int	check_multi_sol(char ***arr)
+{
+	if (arr)
+		return (0);
+	return (0);
 }
 
 int solved(char ***arr)

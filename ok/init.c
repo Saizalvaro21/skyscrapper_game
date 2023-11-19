@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:13:04 by nucieda-          #+#    #+#             */
 /*   Updated: 2023/11/19 19:59:51 by alvaro           ###   ########.fr       */
@@ -12,7 +12,7 @@
 
 #include "rush01.h"
 
-int	ft_free_arr(char ***arr)
+char	***ft_free_arr(char ***arr)
 {
 	int	i;
 	int	j;
@@ -30,10 +30,10 @@ int	ft_free_arr(char ***arr)
 		i++;
 	}
 	free(arr);
-	return;
+	return(NULL);
 }
 
-int	ft_free_clues(int **clues)
+int	**ft_free_clues(int **clues)
 {
 	int i;
 
@@ -44,7 +44,35 @@ int	ft_free_clues(int **clues)
 		i++;
 	}
 	free(clues);
-	return;
+	return(NULL);
+}
+
+int	get_dim(char *args)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (args[i])
+	{
+		if(args[i] >= '1' && args[i] <= '9')
+		{
+			count++;
+			i++;
+		}
+		else
+			return(ft_err(2));
+		if (args[i] == ' ')
+			i++;
+		else if (args[i] == '\0')
+			break ;
+		else
+			return (ft_err(2));
+	}
+	if (count % 4 != 0)
+		return (ft_err(2));
+	return (count / 4);
 }
 
 char	***init_arr(int dim)
@@ -79,8 +107,9 @@ int	**init_clues(int dim, char *args)
 {
 	int **clues;
 	int i;
+	int j;
 
-	clues = malloc(4*8);
+	clues = malloc(4 * 8);
 	if(clues == NULL)
 		return (ft_free_clues(clues));
 	i = 0;
@@ -90,6 +119,13 @@ int	**init_clues(int dim, char *args)
 		if(clues[i] == NULL)
 			return(ft_free_clues(clues));
 		i++;
+	}
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < dim)
+			clues[i][j] = get_clue(i, j, args, dim);
 	}
 	return(clues);
 }

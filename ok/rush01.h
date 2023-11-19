@@ -16,8 +16,8 @@
 	void	print_arr(char ***arr, int dim);
 
 	/*init*/
-	int	ft_free_arr(char ***arr);
-	int	ft_free_clues(int **clues);
+	char	***ft_free_arr(char ***arr);
+	int	**ft_free_clues(int **clues);
 	char	***init_arr(int dim);
 	int	**init_clues(int dim, char *args);
 
