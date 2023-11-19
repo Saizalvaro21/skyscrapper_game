@@ -15,6 +15,7 @@
 	void	init_pos(char *cell, int dim);
 	char	*set_num(char num);
 	void	print_arr(char ***arr, int dim);
+	void	init_cell(char *cell, int dim);
 
 	/*init*/
 	char	***ft_free_arr(char ***arr);
@@ -22,12 +23,13 @@
 	int	get_dim(char *args);
 	char	***init_arr(int dim);
 	int	**init_clues(int dim, char *args);
-
 	int get_clue(int x, int y, char *arg, int dim);
+
 	/*sudoku*/
 	void	check_row(char	***arr, int	col, char num, int dim);
 	void	check_col(char	***arr, int	row, char num, int dim);
 	void	check_sudoku(char ***arr, int dim);
+
 	/*logic*/
 	void	check_clues(char ***arr, int **clues, int dim);
 	void	check_top(char ***arr, int col, int clue, int dim);

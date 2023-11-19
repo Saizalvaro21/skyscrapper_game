@@ -6,7 +6,7 @@
 /*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:13:04 by nucieda-          #+#    #+#             */
-/*   Updated: 2023/11/19 20:16:43 by nucieda-         ###   ########.fr       */
+/*   Updated: 2023/11/19 20:33:37 by nucieda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ char	***init_arr(int dim)
 			arr[i][j] = (char *)malloc(dim);
 			if (!arr[i][j])
 				return (ft_free_arr(arr));
+			init_cell(arr[i][j], dim);
 			j++;
 		}
 		i++;

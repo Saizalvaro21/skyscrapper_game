@@ -6,7 +6,7 @@
 /*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 19:20:28 by alvaro            #+#    #+#             */
-/*   Updated: 2023/11/19 20:16:01 by nucieda-         ###   ########.fr       */
+/*   Updated: 2023/11/19 20:58:44 by nucieda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 		return (ft_err(2));
-
 	dim = get_dim(argv[1]);
 	if (dim == -1)
 		return (ft_err(2));
 	arr = init_arr(dim);
 	clues = init_clues(dim, argv[1]);
-
+	if (arr == NULL || clues == NULL)
+		return (-1);
 	check_clues(arr, clues, dim);
 	while(!solved(arr) && !impossible(arr))
 	{

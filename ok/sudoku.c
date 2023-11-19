@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sudoku.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:13:28 by nucieda-          #+#    #+#             */
-/*   Updated: 2023/11/19 19:20:17 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 20:57:54 by nucieda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	check_row(char	***arr, int	col, char num, int dim)
 {
-    int j;
+    int i;
 
-	j = 0;
-    while(j < dim)
+	i = 0;
+    while(i < dim)
     {
-        delete_pos(arr[col][j], num);
-        j++;
+		if (arr[col][i][1] != '\0')
+    		delete_pos(arr[col][i], num);
+        i++;
     }
 }
 
@@ -31,7 +32,8 @@ void	check_col(char	***arr, int	row, char num, int dim)
 	i = 0;
     while(i < dim)
     {
-        delete_pos(arr[i][row], num);
+		if (arr[i][row][1] != '\0')
+        	delete_pos(arr[i][row], num);
         i++;
     }
 }
@@ -45,9 +47,9 @@ void	check_sudoku(char ***arr, int dim)
 	while(i < dim)
 	{
 		j = 0;
-		while(j < 9)
+		while(j < dim)
 		{
-			if(arr[i][j][1] == '\0' && *arr[i][j] >= '1' && *arr[i][j] <= ('0'+dim))
+			if(arr[i][j][1] == '\0')
 			{
 				check_col(arr, j, *arr[i][j], dim);
 				check_row(arr, i, *arr[i][j], dim);

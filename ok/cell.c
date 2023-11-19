@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cell.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 19:36:21 by alvaro            #+#    #+#             */
-/*   Updated: 2023/11/19 19:36:22 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 20:39:44 by nucieda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,24 @@ void	print_arr(char ***arr, int dim)
 	while(i < dim)
 	{
 		j = 0;
-		while(j < 9)
+		while(j < dim)
 		{
-			ft_putcell(*arr[i][j]);
-			i++;
+			ft_putcell(arr[i][j][0]);
+			j++;
 		}
-		j++;
+		i++;
 		ft_putcell('\n');
+	}
+}
+
+void	init_cell(char *cell, int dim)
+{
+	int	i;
+
+	i = 0;
+	while (i < dim)
+	{
+		cell[i] = i + '1';
+		i++;
 	}
 }
