@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:40:14 by nucieda-          #+#    #+#             */
-/*   Updated: 2023/11/19 19:37:29 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 19:49:44 by nucieda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ int	ft_err(int err_code)
 	{
 		write(1, "ERROR: Input invalid!\n", 23);
 	}
-	return (err_code);
+	return (-1);
 }
 
