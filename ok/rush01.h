@@ -3,6 +3,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 	/*main*/
 	int solved(char ***arr);
 	int	impossible(char ***arr);
@@ -18,6 +19,7 @@
 	/*init*/
 	char	***ft_free_arr(char ***arr);
 	int	**ft_free_clues(int **clues);
+	int	get_dim(char *args);
 	char	***init_arr(int dim);
 	int	**init_clues(int dim, char *args);
 

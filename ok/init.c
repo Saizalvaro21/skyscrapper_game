@@ -6,7 +6,7 @@
 /*   By: nucieda- <nucieda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:13:04 by nucieda-          #+#    #+#             */
-/*   Updated: 2023/11/19 19:59:51 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 20:16:43 by nucieda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,11 +120,11 @@ int	**init_clues(int dim, char *args)
 			return(ft_free_clues(clues));
 		i++;
 	}
-	i = 0;
-	while (i < 4)
+	i = -1;
+	while (++i < 4)
 	{
-		j = 0;
-		while (j < dim)
+		j = -1;
+		while (++j < dim)
 			clues[i][j] = get_clue(i, j, args, dim);
 	}
 	return(clues);
