@@ -15,8 +15,9 @@
 	int	ft_free_clues(int **clues);
 	int	get_dim(char *args);
 	char	***init_arr(int dim);
-	char	**init_clues(int dim, char *args);
+	int	**init_clues(int dim, char *args);
 
+	int get_clue(int x, int y, char *arg);
 	// ...
 
 #endif

@@ -1,3 +1,5 @@
+#include "rush01.h"
+
 int main(int argc, char *argv[])
 {
 	char    ***arr;
@@ -6,7 +8,7 @@ int main(int argc, char *argv[])
 	int		i;
 
 	if (argc != 2)
-		return (ft_err(2));
+		return ((2));
 
 	dim = get_dim(argv[1]);
 	arr = init_arr(dim);
