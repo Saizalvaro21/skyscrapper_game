@@ -6,7 +6,7 @@
 /*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:13:04 by nucieda-          #+#    #+#             */
-/*   Updated: 2023/11/19 17:57:48 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 19:34:05 by alvaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	ft_free_arr(char ***arr)
 		i++;
 	}
 	free(arr);
+	return(0);
 }
 
 int	ft_free_clues(int **clues)
@@ -43,7 +44,7 @@ int	ft_free_clues(int **clues)
 		i++;
 	}
 	free(clues);
-	return(NULL);
+	return(0);
 }
 
 int	get_dim(char *args)
@@ -59,7 +60,7 @@ char	***init_arr(int dim)
 
 	arr = (char ***)malloc(dim * 8);
 	if (!arr)
-		return (ft_free_arr(arr));
+		ft_free_arr(arr);
 	i = 0;
 	while (i < dim)
 	{

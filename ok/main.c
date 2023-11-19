@@ -6,7 +6,7 @@
 /*   By: alvaro <alvaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 19:20:28 by alvaro            #+#    #+#             */
-/*   Updated: 2023/11/19 19:21:42 by alvaro           ###   ########.fr       */
+/*   Updated: 2023/11/19 19:27:59 by alvaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,9 @@ int	impossible(char ***arr)
 	}
 	return (0);
 }
-
+/*
 int	check_multi_sol(char ***arr)
 {
 
 }
+*/

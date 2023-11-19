@@ -21,7 +21,7 @@
 	char	***init_arr(int dim);
 	int	**init_clues(int dim, char *args);
 
-	int get_clue(int x, int y, char *arg);
+	int get_clue(int x, int y, char *arg, int dim);
 	/*sudoku*/
 	void	check_row(char	***arr, int	col, char num, int dim);
 	void	check_col(char	***arr, int	row, char num, int dim);

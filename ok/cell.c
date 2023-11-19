@@ -49,10 +49,10 @@ void	print_arr(char ***arr, int dim)
 		j = 0;
 		while(j < 9)
 		{
-			ft_putchar(*arr[i][j]);
+			ft_putcell(*arr[i][j]);
 			i++;
 		}
 		j++;
-		ft_putchar('\n');
+		ft_putcell('\n');
 	}
 }
